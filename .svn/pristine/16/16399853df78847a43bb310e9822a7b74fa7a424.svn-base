@@ -1,0 +1,305 @@
+
+TIM6.4 = Tim 6.4
+
+UpravljanjeProizvodnjom = Upravljanje Proizvodnjom
+
+action.about                 = Vi\u0161e o MicroDBase
+action.about.image           = images/ico/about.png
+action.add                   = Dodaj
+action.add.tooltip           = Dodaje novi red u tabelu
+action.all                   = Sve
+action.all.image             = images/ico/visible-36.png
+action.button                = Dugme
+action.copy                  = Kopiraj
+action.copy.image            = images/ico/copy.png
+action.create_report         = Kreiraj izve\u0161taj
+action.create_table          = Kreiraj Tabelu
+action.create_table.image    = images/ico/newTable.png
+action.cut                   = Iseci
+action.cut.image             = images/ico/cut.png
+action.delete                = Obri\u0161i
+action.delete.image          = images/ico/delete.png
+action.delete.tooltip        = Bri\u0161e selektovani red iz tabele
+action.detailed_report       = Kreiraj Detaljan izve\u0161taj
+action.detailed_report.image = images/ico/createReport.png
+action.edit                  = Izmeni
+action.edit.tooltip          = Otvara dijalog za editovanje selektovanog reda
+action.english               = Engleski
+action.english.accel         = 69_1
+action.english.image         = images/ico/lang/en_us.png
+action.english.mnemonic      = 69
+action.exit                  = Izlaz
+action.exit.image            = images/ico/exit.png
+action.file                  = Datoteka
+action.format                = Formatiraj
+action.fullscreen            = Prika\u017Ei Ceo Ekran
+action.fullscreen.image      = images/ico/fullScreen.png
+action.help                  = Pomo\u0107
+action.helpmt                = Pomo\u0107
+action.helpmt.image          = images/ico/help.png
+action.languages             = Jezici
+action.mutual                = Zajedni\u010Dko
+action.mutual.image          = images/ico/showGroup.png
+action.new                   = Nova datoteka
+action.new.image             = images/ico/new.png
+action.new.mnemonic          = 78
+action.paste                 = Nalepi
+action.paste.image           = images/ico/paste.png
+action.preferences           = Pode\u0161avanja
+action.preferences.image     = images/ico/settings.png
+action.project               = Projekat
+action.project.image         = images/ico/showProject.png
+action.quick_report          = Kreiraj Brzi Izve\u0161taj
+action.quick_report.image    = images/ico/createQuickReport.png
+action.reports               = Izve\u0161taji
+action.select                = Ozna\u010Di sve
+action.select.image          = images/ico/selectAll.png
+action.serbian               = Srpski
+action.serbian.accel         = 83_1
+action.serbian.image         = images/ico/lang/rs.png
+action.serbian.mnemonic      = 83
+action.tools                 = Alatke
+action.view                  = Prika\u017Ei
+
+add_row = Dodaj novi red u tabelu: 
+
+add_row.insert         = Ubaci
+add_row.insert.image   = images/ico/addRow.png
+add_row.insert.tooltip = Dodaje novi red u selektovanu tabelu.
+
+cancel = Prekini
+
+cancel.cancel_row = Prekini dodavanje novog reda.
+
+close_tabs.name = Zatvaranje tabova...
+
+date.tooltip = Primer formata datuma: 21/01/2001
+
+decimal.tooltip = Primer: 3,14
+
+delete_row.name = Brisanje selektovanog reda...
+
+desc.close      = Iza\u0111i iz aplikacije
+desc.close_app  = Da li ste sigurni da \u017Eelite da zatvorite aplikaciju?
+desc.close_tabs = Svi tabovi \u0107e se sada zatvoriti. Da li \u017Eelite da nastavite?
+desc.delete_row = Da li ste sigurni da \u017Eelite da izbri\u0161ete selektovani red iz baze?
+
+edit_row = Izmeni red u tabeli:
+
+edit_row.update         = Izmeni
+edit_row.update.tooltip = Sa\u010Duvaj sve izmene za ovaj unos.
+
+error.0.text        = Uneta vrednost se ne poklapa sa o\u010Dekivanom. Ni\u0161ta se ne\u0107e dogoditi.
+error.0.title       = Gre\u0161ka Prilikom Unosa
+error.2627.text     = Klju\u010D koji je unesen ve\u0107 postoji. Ni\u0161ta se ne\u0107e izmeniti.
+error.2627.title    = Gre\u0161ka Prilikom Unosa
+error.547.text      = Naru\u0161avanje ograni\u010Denja stranog klju\u010Da. Ni\u0161ta se ne\u0107e izmeniti.
+error.547.title     = Gre\u0161ka Prilikom Unosa
+error.default.text  = Pogre\u0161an unos parametara. Ni\u0161ta se ne\u0107e izmeniti.
+error.default.title = Gre\u0161ka Prilikom Unosa
+
+filter = Filtriraj
+
+filter.clear_filter         = Ukloni filter
+filter.clear_filter.tooltip = Uklanja bilo koji primenjeni filter
+filter.filter_table         = Postavi filter za tabelu:
+filter.from_label           = from:
+filter.to_label             = to:
+filter.toolbar.tooltip      = Otvara dijalog za filtriranje trenutne tabele
+filter.tooltip              = Filtrira tabelu na selektovani kriterijum.
+
+from = Od
+
+groupPackage = Grupni Paket
+
+humaResources = Ljudski Resursi
+
+innerOrganisation = Unutra\u0161nja Organizacija
+
+integer.tooltip = Primer: 3
+
+login.heading          = Ulogujte se za nastavak rada...
+login.password         = Lozinka
+login.password.tooltip = Unesite svoju lozinku.
+login.username         = Korisni\u010Dko ime:
+login.username.tooltip = Unesite svoje korisni\u010Dko ime.
+
+mainframe.title = MicroDBase\u2122 \u010Cita\u010D
+
+materialResourcesWorkspace = Materijalni Resursi I Prostor
+
+no = Ne
+
+ok = U redu
+
+organisationOfBussinesSystems = Organizacija Poslovnih Sistema
+
+productionManagement = Proizvodni Menad\u017Ement
+
+state.active = Stanje: Aktivan
+state.busy   = Stanje:Zauzet
+
+statusbar.team = TIM 6.4
+
+table.AKT_O_ORGANIZACIJI            = Akt O Organizaciji
+table.DOBAVLJAC                     = Dobavlja\u010D
+table.DODELJENE_DELATNOSTI          = Dodeljena Delatnost
+table.DRZAVA                        = Dr\u017Eava
+table.DRZAVNO_UREDJENJE             = Dr\u017Eavno Ure\u0111enje
+table.GRANA                         = Grana
+table.GRUPA_DELATNOSTI              = Grupa Delatnosti
+table.GRUPA_POSLOVA                 = Grupa Poslova
+table.ISTORIJA_UREDJENJA            = Istorija Ure\u0111enja
+table.KORISTI_OBJEKTE               = Koristi Objekte
+table.KORISTI_PROSTORIJE            = Koristi Prostorije
+table.MERNA_JEDINICA                = Merna Jedinica
+table.NALOG_ZA_LANSIRANJE_PROIZVODA = Nalog Za Lansiranje Proizvoda
+table.NAMENA_OBJEKTA_I_PROSTORA     = Namena Objekata I Prostorija
+table.NARUDZBENICA                  = Narud\u017Ebenica
+table.NASELJENO_MESTO               = Naseljeno Mesto
+table.OBJEKTI_I_ZGRADE              = Objekti I Zgrade
+table.OBLAST                        = Oblast delatnosti
+table.OPSTINA                       = Op\u0161tina
+table.ORGANIZACIONA_SEMA            = Organizaciona \u0160ema
+table.ORGANIZACIONA_STRUKTURA       = Organizaciona Struktura
+table.ORGANIZACIONE_JEDINICE        = Organizacione Jedninice
+table.PODELJENE_DELATNOSTI          = Podeljene Delatnosti
+table.POSLOVNI_SISTEM               = Registrovan za
+table.PRIJEMNICA                    = Prijemnica
+table.PROIZVOD                      = Proizvod
+table.PROSTORIJE                    = Prostorije
+table.RADNA_GODINA                  = Radna Godina
+table.RASPORED_NA_RADNA_MESTA       = Raspored Na Radna Mesta
+table.REGION                        = Region
+table.REGISTAR_ZAPOSLENIH           = Registar Zaposlenih
+table.REGISTROVAN_ZA                = Registrovan Za
+table.ROBA                          = Roba
+table.SASTAV_DRZAVE                 = Sastav Dr\u017Eave
+table.SEDE_U_PROSTORIJI             = Sede U Prostoriji
+table.SEKTOR                        = Sektor
+table.SISTEMATIZACIJA_RADNIH_MESTA  = Sistematizacija Radnih Mesta
+table.STA_TREBA_PROIZVESTI          = \u0160ta Treba Proizvesti
+table.STRUKTURA_LOKALNE_SAMOUPRAVE  = Struktura Regiona
+table.STRUKTURA_PROIZVODA           = Struktura Proizvoda
+table.STRUKTURA_REGIONA             = Struktura Regiona
+table.TIP                           = Tip
+table.TIP_REGIONA                   = Tip Regiona
+table.TIP_ROBE                      = Tip Robe
+table.TRAZI_NARUDZBINU              = Tra\u017Ei Narud\u017Ebinu
+table.column.AKT_DR_OZNAKA          = Oznaka Dr\u017Eave
+table.column.AKT_GD_OZNAKA          = Oznaka Grupe Delatnosti
+table.column.AO_DATUM_USVAJANJA     = Datum Usvajanja AO
+table.column.AO_REDNI_BROJ2         = Redni Broj Akta O Organizaciji
+table.column.AO_VAZI_DO             = Datum Prestanka Vazenja AO
+table.column.DRZ_DR_OZNAKA          = Oznaka Dr\u017Eave
+table.column.DR_NAZIV               = Naziv Dr\u017Eave
+table.column.DR_OZNAKA              = Oznaka Dr\u017Eave
+table.column.DUR_NAZIV              = Naziv Dr\u017Eavnog Ure\u0111enja
+table.column.DUR_OZNAKA             = Oznaka Dr\u017Eavnog Ure\u0111enja
+table.column.GD_NAZIV               = Naziv Grupe Delatnosti
+table.column.GD_OZNAKA              = Oznaka Grupe Delatnosti
+table.column.GRA_GRANA              = Oznaka Grane
+table.column.GRA_NAZIV              = Naziv Grane
+table.column.GRU_GRUPA              = Oznaka Grupe Poslova
+table.column.GRU_NAZIV              = Naziv Grupe Poslova
+table.column.NAM_DR_OZNAKA          = Oznaka dr\u017Eave
+table.column.NAM_GD_OZNAKA          = Oznaka Grupe Delatnosti
+table.column.NAM_OPIS               = Opis Namene
+table.column.NAM_OZNAKA             = Oznaka Namene
+table.column.NAM_PS_OZNAKA          = Oznaka Poslovnog Sistema
+table.column.NAS_DR_OZNAKA          = Dr\u017Eava Sedi\u0161ta Regiona
+table.column.NM_IDENTIFIKATOR       = Identifikator naseljenog mesta
+table.column.NM_NAZIV               = Naziv Naseljenog Mesta
+table.column.NM_PTT_OZNAKA          = PTT Oznaka 
+table.column.OBJ_ADRESA             = Adresa Objekta
+table.column.OBJ_GD_OZNAKA          = Oznaka Grupe Delatnosti
+table.column.OBJ_NAZIV              = Naziv Objekta
+table.column.OBJ_OZNAKA             = Oznaka Objekta
+table.column.OBJ_PS_OZNAKA          = Oznaka Poslovnog Sistema
+table.column.OBL_NAZIV              = Naziv Oblasti
+table.column.OBL_OBLAST             = Oznaka Oblasti
+table.column.OJ_ADRESA              = Adresa Organizacione Jedinice
+table.column.OJ_DATOSN              = Datum Osnivanja OJ
+table.column.OJ_DATUK               = Datum Ukidanja OJ
+table.column.OJ_E_MAIL              = E-mail Organizacione Jednice
+table.column.OJ_FAX                 = Fax Organizacione Jedinice
+table.column.OJ_NAZIV               = Naziv Organizacione Jedinice
+table.column.OJ_OZNAKA              = Oznaka Organizacione Jedinice
+table.column.OJ_TEL                 = Telefon Organizacione Jedinice
+table.column.OJ_WEB                 = Internet Prezentacija Organizacione Jedinice
+table.column.OP_NAZIV               = Naziv Op\u0161tine
+table.column.OP_OZNAKA              = Oznaka Op\u0161tine
+table.column.ORG_DR_OZNAKA          = Oznaka Dr\u017Eave
+table.column.ORG_GD_OZNAKA          = Oznaka Grupe Delatnosti
+table.column.ORG_OJ_OZNAKA          = Oznaka Organizacione Jedinice
+table.column.ORG_PS_OZNAKA          = Oznaka Poslovnog Sistema
+table.column.POS_DR_OZNAKA          = Oznaka Dr\u017Eave
+table.column.POS_GD_OZNAKA          = Oznaka Grupe Delatnosti
+table.column.POS_PS_OZNAKA          = Oznaka Poslovnog Sistema
+table.column.PRO_DR_OZNAKA          = Oznaka Grupe Delatnosti
+table.column.PRO_LOKAL              = ID Lokala
+table.column.PRO_NAZIV              = Naziv Prostorije
+table.column.PRO_OBJ_OZNAKA         = Oznaka Objekta
+table.column.PRO_POS_DR_OZNAKA      = Oznaka dr\u017Eave
+table.column.PRO_POS_GD_OZNAKA      = Oznaka Grupe Delatnosti
+table.column.PRO_POS_PS_OZNAKA      = Oznaka Poslovnog Sistema
+table.column.PRO_POVRSINA           = Povr\u0161ina Prostorije
+table.column.PRO_PROSTORIJA         = Oznaka Prostorije
+table.column.PRO_PRO_PROSTORIJA     = Prostorija
+table.column.PRO_PRO_SPRAT          = Sprat
+table.column.PRO_SPRAT              = Sprat Prostorije
+table.column.PS_ADRESA              = Adresa Poslovnog Sistema
+table.column.PS_E_MAIL              = E-mail Poslovnog Sistema
+table.column.PS_FAX                 = Fax Poslovnog Sistema
+table.column.PS_MBR                 = MBR Poslovnog Sistema
+table.column.PS_NAZIV               = Naziv Poslovnog Sistema
+table.column.PS_OZNAKA              = Oznaka Poslovnog Sistema
+table.column.PS_PIB                 = PIB Poslovnog Sistema
+table.column.PS_TEL                 = Telefon Poslovnog Sistema
+table.column.PS_WEB                 = Internet Prezentacija Poslovnog Sistema
+table.column.RASP_DO                = Raspore\u0111en Do
+table.column.RASP_OD                = Raspore\u0111en Od
+table.column.RASP_RBR               = Redni Broj
+table.column.REG_DR_OZNAKA          = Oznaka Grupe Delatnosti
+table.column.REG_DR_OZNAKA2         = Oznaka dr\u017Eave
+table.column.REG_GD_OZNAKA2         = Oznaka Grupe Delatnosti
+table.column.REG_NAZIV              = Naziv Regiona
+table.column.REG_OZNAKA             = Oznaka Regiona
+table.column.REG_PS_OZNAKA          = Oznaka Poslovnog Sistema
+table.column.REG_REG_OZNAKA         = Oznaka Regiona
+table.column.REG_TR_OZNAKA          = Oznaka Tipa Regiona
+table.column.REG_ZAP_REDNI_BROJ     = Redni Broj
+table.column.RM_NAZIV               = Naziv Radnog Mesta
+table.column.RM_OZNAKA              = Oznaka Rasporeda Na Radno Mesto
+table.column.SAS_DO                 = Datum Deformacije Sastava Dr\u017Eave
+table.column.SAS_OD                 = Datum Formiranja Sastava Dr\u017Eave
+table.column.SE_NAZIV               = Naziv Sektora
+table.column.SE_SEKTOR              = Oznaka Sektora
+table.column.SKL_SIFRA              = \u0160ifra SKL
+table.column.TIP_DR_OZNAKA          = Oznaka Dr\u017Eave
+table.column.TIP_GD_OZNAKA          = Oznaka Grupe Delatnosti
+table.column.TIP_NAZIV              = Oznaka Dr\u017Eave
+table.column.TIP_OZNAKA             = Oznaka Tipa
+table.column.TIP_PS_OZNAKA          = Oznaka Poslovnog Sistema
+table.column.TR_NAZIV               = Naziv Tipa Regiona
+table.column.TR_OZNAKA              = Oznaka Tipa Regiona
+table.column.URE_BROJ               = Broj Ure\u0111enja
+table.column.URE_DO_KADA            = Datum Prestanka Ure\u0111enja
+table.column.URE_OD_KADA            = Datum Formiranja Ure\u0111enja
+table.column.ZAP_IME                = Ime Zaposlenog
+table.column.ZAP_IMEROD             = Ime Roditelja Zaposlenog
+table.column.ZAP_JMBG               = JMBG Zaposlenog
+table.column.ZAP_PREZIME            = Prezime Zaposlenog
+table.column.ZAP_REDNI_BROJ         = Redni Broj
+
+tb.showtree = Prika\u017Ei stablo: 
+
+teamPackage = Timski Paket
+
+territoryOrganization = Teritorijalna Organizacija
+
+to = Do
+
+workspace = Radno Okru\u017Eenje
+
+yes = Da

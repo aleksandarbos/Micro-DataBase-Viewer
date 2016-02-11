@@ -1,0 +1,404 @@
+package gui;
+
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.Toolkit;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import controller.actions.table.updatedialog.ActionAddTableRow;
+import controller.actions.table.updatedialog.ActionCancelUpdateRow;
+import controller.actions.table.updatedialog.ActionEditTableRow;
+import controller.actions.table.updatedialog.ActionFilterTable;
+import controller.database.DataBase;
+import enums.ColumnType;
+import enums.TableLocation;
+import enums.TableUpdateMode;
+import gui.imagebackgrounds.ImageBackgroundPanel;
+import localisation.Loc;
+import localisation.LocaliseName;
+import model.table.MyDefaultTableModel;
+import model.table.row.ColumnEntryPair;
+/**
+ * Klasa koja generise genericki GUI formu u zavisnosti od broja
+ * atributa koji treba da odredjuje. U okviru klase je obradjeno
+ * upravljanje aplikacijom u zavisnosti od toga da li je trenutno stanje prikaza {@code RowUpdateDialog.ADD_ROW}, 
+ * {@code RowUpdateDialog.EDIT_ROW} ili {@code RowUpdateDialog.FILTER_TABLE}. Prozor koji klasa generse je
+ * deterministicke velicine tj. zavisan od komponenti koje se nalaze unutar njega.
+ * @author Aleksandar
+ *
+ */
+
+@SuppressWarnings("serial")
+public class RowUpdateDialog extends JDialog {
+	
+	private Vector<String> data;
+	private Vector<String> headers;
+	private Vector<String> semanticHeaders;
+	private Vector<ColumnEntryPair> enteredData;
+	private ArrayList<JTextField> textFields;
+	
+	private TableUpdateMode updateMode;
+	private MyDefaultTableModel activeTableModel;
+	private Loc loc = Loc.getInstance();
+	
+	/**
+	 * Kreiranje novog dijaloga.
+	 * @param activeTable Tabela na koju se odnosi akcija azuriranja.
+	 * @param updateMode Mod prilikom kog pozivamo formiranje dijaloga za azurianje.
+	 */
+	public RowUpdateDialog(MyDefaultTableModel activeTable, TableUpdateMode updateMode) {
+		initialize(activeTable, updateMode);
+	}
+
+	private void initialize(MyDefaultTableModel activeTable,  TableUpdateMode updateMode) {
+		ImageBackgroundPanel mainPanel = new ImageBackgroundPanel("images/dialog.jpg");
+		String titleBar = "";
+		
+		String tableName = activeTable.getTableName();
+		LocaliseName titleBarLoc = new LocaliseName("");
+		LocaliseName tableNameLoc = new LocaliseName("");
+		
+		JLabel heading = new JLabel();
+		GridBagConstraints c = new GridBagConstraints();
+		boolean isEditing = false;
+		
+		try {
+			this.data = (Vector<String>) activeTable.getDataVector().get(activeTable.getSelectedIdx());
+		} catch(Exception e) {
+			System.out.println("Table is empty...");
+		}
+		
+		this.updateMode = updateMode;
+		this.activeTableModel = activeTable;
+		this.headers = activeTable.getHeaders();
+		this.semanticHeaders = activeTable.getSemanticHeaders();
+		this.enteredData = new Vector<>();
+		this.textFields = new ArrayList<>();
+		
+		mainPanel.setLayout(new GridBagLayout());
+		mainPanel.setBorder(new EmptyBorder(30, 20, 20, 30));		// dodaj granicni okvir
+		setContentPane(mainPanel);
+		
+		switch(this.updateMode) {
+			case ADD_ROW:
+				Loc.getInstance().register(titleBarLoc, "setName", "add_row");
+				Loc.getInstance().register(tableNameLoc, "setName", "table."+tableName);
+				titleBar = titleBarLoc.getName()+" " + tableNameLoc.getName();
+				titleBarLoc.setName(titleBar);
+				isEditing = false;
+				break;
+			case EDIT_ROW:
+				Loc.getInstance().register(titleBarLoc, "setName", "edit_row");
+				Loc.getInstance().register(tableNameLoc, "setName", "table."+tableName);
+				titleBar = titleBarLoc.getName()+" " + tableNameLoc.getName();
+				titleBarLoc.setName(titleBar);
+				isEditing = true;
+				break;
+			case FILTER_TABLE:
+				Loc.getInstance().register(titleBarLoc, "setName", "filter.filter_table");
+				Loc.getInstance().register(tableNameLoc, "setName", "table."+tableName);
+				titleBar = titleBarLoc.getName()+" " + tableNameLoc.getName();
+				titleBarLoc.setName(titleBar);
+				
+				isEditing = false;
+				break;
+		}
+		
+		setTitle(titleBar);
+		
+		heading.setText(titleBar);
+		heading.setFont(new Font("Arial", Font.ITALIC, 15));
+		
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridy = 0;
+		c.gridx = 0;
+		c.weightx = 0.1;
+		c.weighty = 0.1;
+		c.gridwidth = 2;
+		c.insets = new Insets(0, 0, 10, 0);
+		
+		mainPanel.add(heading, c);
+		c.gridwidth = 1;
+		c.insets = new Insets(0, 0, 0, 0);
+		
+		
+		for(int i = 1; i < headers.size()+1; i++) {
+			String columnName = headers.get(i-1);
+			String semanticColumnName = semanticHeaders.get(i-1);
+			LocaliseName columnNameLoc = new LocaliseName("");
+			Loc.getInstance().register(columnNameLoc, "setName", "table.column."+columnName);
+			
+			
+			c.gridx = 0;	// resetuj na 0 x poziciju
+			c.gridy = i;
+			c.ipady = 20;
+			JLabel l = new JLabel(semanticColumnName + ":");
+			mainPanel.add(l, c);
+			
+			c.ipady = 0;
+			c.gridx = 1;
+			
+			ColumnType type = DataBase.getInstance().getColumnType(tableName, columnName);
+			
+			if(updateMode == TableUpdateMode.FILTER_TABLE && (type == ColumnType.DATE || type == ColumnType.NUMERIC || type == ColumnType.DECIMAL || type == ColumnType.DATETIME)) {
+				JPanel rangePanel = new JPanel(new FlowLayout());
+				rangePanel.setOpaque(false);
+				
+				JLabel fromLabel = new JLabel("");
+				JLabel toLabel = new JLabel("");
+				
+				Loc.getInstance().registerSetText(fromLabel, "from");
+				Loc.getInstance().registerSetText(toLabel, "to");
+				
+				if(type == ColumnType.DATE || type == ColumnType.DATETIME) {
+					// ukoliko je datum...
+					DateFormat format;
+
+					if(loc.getLanguage().toString().equals("en_US"))
+						format = new SimpleDateFormat("mm/dd/yyyy");
+					else
+						format = new SimpleDateFormat("dd.mm.yyyy");
+					
+				    JFormattedTextField fromDate = new JFormattedTextField(format);
+				    JFormattedTextField toDate = new JFormattedTextField(format);
+				    
+				    fromDate.setPreferredSize(new Dimension(85, 20));
+				    toDate.setPreferredSize(new Dimension(85, 20));
+				    
+				    Loc.getInstance().registerSetTooltipText(fromDate, "date.tooltip");
+				    Loc.getInstance().registerSetTooltipText(toDate, "date.tooltip");
+				  
+				    
+				    fromDate.setName("filterTf");		// bitno zbog dodavanja %%
+					toDate.setName("filterTf");
+				    
+				    rangePanel.add(fromLabel);
+				    rangePanel.add(fromDate);
+					
+				    rangePanel.add(toLabel);
+				    rangePanel.add(toDate);
+					
+					mainPanel.add(rangePanel, c);
+					
+					this.textFields.add(fromDate);
+					this.textFields.add(toDate);
+					
+					enteredData.add(new ColumnEntryPair(tableName, columnName, fromDate));		// bitno kada se na kraju svi podaci budu kupili
+					enteredData.add(new ColumnEntryPair(tableName, columnName, toDate));	
+					
+				} else if(type == ColumnType.NUMERIC || type == ColumnType.DECIMAL) {
+				    // ukoliko je numericka vrednost...
+					JTextField fromValue = new JTextField(10);
+				    JTextField toValue = new JTextField(10);
+
+				    fromValue.setName("filterTf");
+				    toValue.setName("filterTf");
+
+				    rangePanel.add(fromLabel);
+				    rangePanel.add(fromValue);
+				  
+				    rangePanel.add(toLabel);
+				    rangePanel.add(toValue);
+				    
+				    mainPanel.add(rangePanel, c);
+				    
+				    if(type == ColumnType.DECIMAL) {
+				    	Loc.getInstance().registerSetTooltipText(fromValue, "decimal.tooltip");
+				    	Loc.getInstance().registerSetTooltipText(toValue, "decimal.tooltip");
+				   
+				    	enteredData.add(new ColumnEntryPair(tableName, columnName, fromValue));	
+					    enteredData.add(new ColumnEntryPair(tableName, columnName, toValue));	
+				    }
+				    else {		// ako je celobrojna vrednost: int, smallint... NUMERIC
+				    	Loc.getInstance().registerSetTooltipText(fromValue, "integer.tooltip");
+				    	Loc.getInstance().registerSetTooltipText(toValue, "integer.tooltip");
+				    	enteredData.add(new ColumnEntryPair(tableName, columnName, fromValue));	
+					    enteredData.add(new ColumnEntryPair(tableName, columnName, toValue));	
+				    }
+				    	
+				    this.textFields.add(fromValue);
+				    this.textFields.add(toValue);
+				}
+				
+			} else {	// EDIT ili ADD_NEW
+				// dodaj tekstualno polje
+				JTextField tf;
+
+				DateFormat format;
+
+				if(loc.getLanguage().toString().equals("en_US"))
+					format = new SimpleDateFormat("mm/dd/yyyy");
+				else
+					format = new SimpleDateFormat("dd.mm.yyyy");
+
+				
+				if(type == ColumnType.DATE || type == ColumnType.DATETIME) {
+					tf = new JFormattedTextField(format);
+					Loc.getInstance().registerSetTooltipText(tf, "date.tooltip");
+				} else {
+					tf = new JTextField(25);
+				}
+				
+				tf.setName("tf"+columnName);	// primer naziva za DRZAVA: tfDRZAVA -- bitno kasnije za pristup tim tf-ovima
+				
+				if(DataBase.getInstance().isPrimaryKey(tableName, columnName) && updateMode == TableUpdateMode.EDIT_ROW
+						&& activeTable.getTableLocation() == TableLocation.UPPER_TABLE)
+					tf.setEditable(false);
+				
+				if(updateMode == TableUpdateMode.EDIT_ROW && activeTable.getTableLocation() == TableLocation.BOTTOM_TABLE) {
+					for(ColumnEntryPair pair: activeTable.getForeignKeysList()) {
+						if(pair.getColumnName().equals(semanticColumnName))
+							tf.setEditable(false);
+					}
+				}
+
+				if(activeTable.getTableLocation() == TableLocation.BOTTOM_TABLE)		// kod dodavanja, zakljucaj foreign keys 
+					for(ColumnEntryPair pair: activeTable.getForeignKeysList()) {		// dodaj ih automatski u odnosu na
+						if(pair.getColumnName().equals(semanticColumnName)) {			// selektovanu parent  torku
+							tf.setText((String) pair.getDataValue());
+							tf.setEditable(false);
+						}
+					}
+
+				//System.out.println("columnName: " + columnName);
+				
+				if(updateMode == TableUpdateMode.EDIT_ROW)	// ispuni ih tekstom ako su u edit rezimu prikaza			
+					tf.setText(data.get(i-1));
+				
+				this.textFields.add(tf);
+				enteredData.add(new ColumnEntryPair(tableName, columnName, tf));
+				
+				mainPanel.add(tf, c);
+				
+			}
+		}
+		
+		c.gridy = headers.size()+1;
+		c.ipady = 10;
+		
+		JPanel buttonsPanel = new JPanel();
+		buttonsPanel.setLayout(new GridBagLayout());
+		GridBagConstraints bc = new GridBagConstraints();
+		
+		bc.gridx = bc.gridy = 0;
+		bc.gridwidth = 1;
+		bc.anchor = GridBagConstraints.LAST_LINE_END;
+		bc.weightx = 0.1;
+		
+
+
+		JButton btnAdd = new JButton(new ActionAddTableRow(null,"","", this));
+		Loc.getInstance().registerSetText(btnAdd, "add_row.insert");
+		Loc.getInstance().registerSetTooltipText(btnAdd, "add_row.insert.tooltip");
+		JButton btnSaveChanges = new JButton(new ActionEditTableRow(null,"","",this));
+		Loc.getInstance().registerSetText(btnSaveChanges, "edit_row.update");
+		Loc.getInstance().registerSetTooltipText(btnSaveChanges, "edit_row.update.tooltip");
+
+		JButton btnCancel = new JButton(new ActionCancelUpdateRow(null, "", "", this));
+		Loc.getInstance().registerSetText(btnCancel, "cancel");
+		Loc.getInstance().registerSetTooltipText(btnCancel, "cancel.cancel_row");
+
+		JButton btnFilter = new JButton(new ActionFilterTable(null, "", "", this));
+		Loc.getInstance().registerSetText(btnFilter, "filter");
+		Loc.getInstance().registerSetTooltipText(btnFilter, "filter.tooltip");
+
+		
+
+		btnAdd.setPreferredSize(new Dimension(100, 30));
+		btnSaveChanges.setPreferredSize(new Dimension(100, 30));
+		btnCancel.setPreferredSize(new Dimension(100, 30));
+		btnFilter.setPreferredSize(new Dimension(100, 30));
+		
+		switch(updateMode) {
+			case ADD_ROW:
+				buttonsPanel.add(btnAdd, bc);
+				break;
+			case EDIT_ROW:
+				buttonsPanel.add(btnSaveChanges, bc);
+				break;
+			case FILTER_TABLE:
+				buttonsPanel.add(btnFilter, bc);
+				break;
+		}
+		
+		bc.gridx = 1;
+		buttonsPanel.add(btnCancel, bc);
+
+		buttonsPanel.setOpaque(false);
+		mainPanel.add(buttonsPanel, c);
+		
+		pack();
+		//setSize(400, 500);
+		setFrame();
+		
+	}
+
+	private void setFrame() {
+		// podesi ga na sredinu ekrana...
+		setLocation(Toolkit.getDefaultToolkit().getScreenSize().width/2-this.getWidth()/2, Toolkit.getDefaultToolkit().getScreenSize().height/2-this.getHeight()/2);
+		setModal(true);		
+	}
+
+	public MyDefaultTableModel getActiveTableModel() {
+		return activeTableModel;
+	}
+
+
+	public Vector<String> getData() {
+		Vector<String> returnData = new Vector<String>();
+		
+		for(JTextField tf: textFields) {
+			if(tf.getText().equals(""))
+				returnData.add(null);
+			else
+				returnData.add(tf.getText());
+		}
+		
+		return returnData;
+	}
+	
+	public Vector<String> getFilterData() {
+		Vector<String> returnData = new Vector<String>();
+		
+		for(JTextField tf: textFields) {
+			if(tf.getText().equals(""))
+					returnData.add(null);
+				else if(!tf.getName().equals("filterTf"))
+					returnData.add("%" + tf.getText() + "%");
+					else
+						returnData.add(tf.getText());
+		}
+		
+		return returnData;
+	}
+
+
+	public Vector<ColumnEntryPair> getEnteredData() {
+		return enteredData;
+	}
+
+	public Vector<String> getHeaders() {
+		// TODO Auto-generated method stub
+		return this.headers;
+	}
+	
+	
+	
+}

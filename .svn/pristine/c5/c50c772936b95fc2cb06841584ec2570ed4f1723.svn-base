@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="NodeListTest" project="MicroDBase" tests="9" started="9" failures="3" errors="0" ignored="0" class="NodeList" revision="172">
+  <testsuite name="test.model.tree.NodeListTest" time="0.667">
+    <testsuite name="[0]" time="0.614">
+      <testcase name="testToMap[0]" classname="test.model.tree.NodeListTest" method="public HashMap&lt;String, Node&gt; toMap();" time="0.0" status="Success"/>
+      <testcase name="testReadJSON[0]" classname="test.model.tree.NodeListTest" method="public static NodeList readJSON(String path);" time="0.604" status="Success"/>
+      <testcase name="testEquals[0]" classname="test.model.tree.NodeListTest" method="public boolean equals(NodeList nodeList);" time="0.01" status="Failure">
+			<failure>
+				nodeList1.equals(nodeList2);
+				Ocekivani rezultat je bio false, ali metoda nije izvrsena.
+				Problem je resen tako sto je dodata druga petlja, kojom se proverava da li i svi elementi iz druge liste imaju svoje ekvivalente u prvoj.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+    </testsuite>
+    <testsuite name="[1]" time="0.021">
+      <testcase name="testToMap[1]" classname="test.model.tree.NodeListTest" method="public HashMap&lt;String, Node&gt; toMap();" time="0.001" status="Success"/>
+      <testcase name="testReadJSON[1]" classname="test.model.tree.NodeListTest" method="public static NodeList readJSON(String path);" time="0.018" status="Success"/>
+      <testcase name="testEquals[1]" classname="test.model.tree.NodeListTest" method="public boolean equals(NodeList nodeList);" time="0.002" status="Failure">
+			<failure>
+				nodeList1.equals(nodeList2);
+				Ocekivani rezultat je bio false, ali metoda nije izvrsena.
+				Problem je resen tako sto je dodata druga petlja, kojom se proverava da li i svi elementi iz druge liste imaju svoje ekvivalente u prvoj.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+    </testsuite>
+    <testsuite name="[2]" time="0.031">
+      <testcase name="testToMap[2]" classname="test.model.tree.NodeListTest" method="public HashMap&lt;String, Node&gt; toMap();" time="0.0" status="Success"/>
+      <testcase name="testReadJSON[2]" classname="test.model.tree.NodeListTest" method="public static NodeList readJSON(String path);" time="0.016" status="Success"/>
+      <testcase name="testEquals[2]" classname="test.model.tree.NodeListTest" method="public boolean equals(NodeList nodeList);" time="0.015" status="Failure">
+			<failure>
+				nodeList1.equals(nodeList2);
+				Ocekivani rezultat je bio false, ali metoda nije izvrsena.
+				Problem je resen tako sto je dodata druga petlja, kojom se proverava da li i svi elementi iz druge liste imaju svoje ekvivalente u prvoj.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

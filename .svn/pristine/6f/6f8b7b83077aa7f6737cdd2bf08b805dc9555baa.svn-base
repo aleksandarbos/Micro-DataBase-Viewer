@@ -1,0 +1,78 @@
+package controller.listeners.tabbedpane;
+
+import javax.swing.JSplitPane;
+import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import enums.TableLocation;
+import gui.MainTabbedPane;
+import model.table.ActiveTablesModel;
+
+/**
+ * Klasa koja prati aktivnu selekciju tabova u okviru aplikacije. Provera se sastoji od dva koraka,
+ * 1: da se proveri da li se menja selekcija gornjih ili donjih tabova, 2: da se utvrdi ukoliko je gornji
+ * selektovan tab imao podtabove(donje) tada pogledati koja je aktivna dole selektovana. Klasa usko vezana
+ * za {@link ActiveTablesModel} jer se na osnovu stanja, menjaju <code> currentUpperTable </code> i 
+ * <code> currentBottomTable </code> iste klase.
+ * @author Aleksandar
+ */
+public class TabChangeListener implements ChangeListener {
+	
+	private MainTabbedPane upperTabbedPane = MainTabbedPane.getInstance();
+	private TableLocation tableLocation;
+	
+	public TabChangeListener(TableLocation tableLocation) {
+		this.tableLocation = tableLocation;
+	}
+
+	@Override
+	public void stateChanged(ChangeEvent e) {
+		try{
+			if(this.tableLocation == this.tableLocation.UPPER_TABLE) {
+				if(upperTabbedPane.getTabCount() > 0) {
+					JTabbedPane bottomTabbedPane;
+					JSplitPane mainSplit;
+					String currentTableName = "";
+					String currentBottomTableName;
+					if(upperTabbedPane.getTabComponentAt(upperTabbedPane.getSelectedIndex()) != null)
+						currentTableName = upperTabbedPane.getTabComponentAt(upperTabbedPane.getSelectedIndex()).getName();
+					
+					ActiveTablesModel.getInstance().setCurrentTableByName(currentTableName, tableLocation);
+					ActiveTablesModel.getInstance().getTableModelByName(currentTableName).setTableLocation(TableLocation.UPPER_TABLE);;
+					
+					
+					// proveri ako ima donje tabove, vrati na onaj nazad koji je bio sleketovan
+					mainSplit = upperTabbedPane.getOpenedTabbedPanes().get(currentTableName);
+					if(mainSplit != null && mainSplit.getBottomComponent() != null) {
+						bottomTabbedPane = (JTabbedPane) mainSplit.getBottomComponent();
+						currentBottomTableName = bottomTabbedPane.getTabComponentAt(bottomTabbedPane.getSelectedIndex()).getName();
+						if(bottomTabbedPane.getTabCount() > 0)
+							ActiveTablesModel.getInstance().setCurrentTableByName(currentBottomTableName, tableLocation.BOTTOM_TABLE);
+					}
+					
+				}
+				// ako se selekcija tabova vrsi samo po donjim tabovima
+			} else if(this.tableLocation == this.tableLocation.BOTTOM_TABLE) {
+				JTabbedPane bottomTabbedPane = (JTabbedPane)e.getSource();
+				String currentBottomTableName = null;
+				
+				try{
+					currentBottomTableName = bottomTabbedPane.getTabComponentAt(bottomTabbedPane.getSelectedIndex()).getName();
+				} catch(Exception e1) {
+					//System.out.println("Could not get bottom table's name.");
+				}
+				
+				if(bottomTabbedPane.getTabCount() > 0) { 
+					ActiveTablesModel.getInstance().setCurrentTableByName(currentBottomTableName, tableLocation);
+					ActiveTablesModel.getInstance().getTableModelByName(currentBottomTableName).setTableLocation(TableLocation.BOTTOM_TABLE);;
+
+				}
+			}
+
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	}
+
+}

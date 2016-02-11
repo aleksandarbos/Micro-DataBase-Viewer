@@ -1,0 +1,1152 @@
+{ "list" : [
+{
+	"name" : "workspace",
+	"type" : "0",
+	"displayName": "PSW",
+	"children" : [ "productionManagement" ],
+	"columns" : []
+},
+{
+	"name" : "productionManagement",
+	"type" : "1",
+	"displayName": "Proizvodni menadzment",
+	"children" : [ "groupPackage", "teamPackage" ],
+	"columns" : []
+},
+{
+	"name" : "groupPackage",
+	"type" : "2",
+	"displayName": "Grupni paket",
+	"children" : [ "territoryOrganization", "organisationOfBussinesSystems" ],
+	"columns" : []
+},
+{
+	"name" : "territoryOrganization",
+	"type" : "2",
+	"displayName": "Teritorijalna organizacija",
+	"children" : [ "DRZAVA", "DRZAVNO_UREDJENJE", "ISTORIJA_UREDJENJA", "NASELJENO_MESTO", "OPSTINA", "REGION", "SASTAV_DRZAVE", "STRUKTURA_LOKALNE_SAMOUPRAVE", "STRUKTURA_REGIONA", "TIP_REGIONA"],
+	"columns" : []
+},
+{
+	"name": "DRZAVA",
+	"type": "3",
+	"displayName" : "Država",
+	"children" : [ "POSLOVNI_SISTEM", "OBLAST", "SEKTOR", "DRZAVA", "SASTAV_DRZAVE", "ISTORIJA_UREDJENJA", "OPSTINA", "NASELJENO_MESTO", "REGION" ],
+	"columns" : [ "DR_OZNAKA","DR_NAZIV", "DUR_OZNAKA", "NM_IDENTIFIKATOR" ]
+},
+{
+	"name": "DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "DR_NAZIV",
+	"type": "4",
+	"displayName": "Naziv države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NM_IDENTIFIKATOR",
+	"type": "4",
+	"displayName": "Identifikator naseljenog mesta",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "DRZ_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "DRZAVNO_UREDJENJE",
+	"type": "3",
+	"displayName": "Državno uredjenje",
+	"children": [ "DRZAVA", "ISTORIJA_UREDJENJA"],
+	"columns" : [ "DUR_OZNAKA", "DUR_NAZIV"]
+},
+{
+	"name": "DUR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka državnog uredjenja",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "DUR_NAZIV",
+	"type": "4",
+	"displayName": "Naziv državnog uredjenja",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ISTORIJA_UREDJENJA",
+	"type": "3",
+	"displayName": "Istorija uredjenja",
+	"children" : [],
+    "columns" : [ "DR_OZNAKA", "DUR_OZNAKA", "URE_BROJ", "URE_OD_KADA", "URE_DO_KADA" ]
+},
+{
+	"name": "URE_BROJ",
+	"type": "4",
+	"displayName": "Broj uredjenja",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "URE_OD_KADA",
+	"type": "4",
+	"displayName": "Datum formiranja uredjenja",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "URE_DO_KADA",
+	"type": "4",
+	"displayName": "Datum prestanka uredjenja",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NASELJENO_MESTO",
+	"type": "3",
+	"displayName": "Naseljeno mesto",
+	"children": [ "OBJEKTI_I_ZGRADE", "ORGANIZACIONE_JEDINICE", "POSLOVNI_SISTEM", "DRZAVA", "OPSTINA", "STRUKTURA_LOKALNE_SAMOUPRAVE", "REGION"],
+	"columns" : [ "DR_OZNAKA", "NM_IDENTIFIKATOR", "NM_NAZIV", "NM_PTT_OZNAKA" ]
+},
+{
+	"name": "NM_NAZIV",
+	"type": "4",
+	"displayName": "Naziv naseljenog mesta",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NM_PTT_OZNAKA",
+	"type": "4",
+	"displayName": "PTT oznaka",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OPSTINA",
+	"type": "3",
+	"displayName": "Opština",
+	"children": [ "STRUKTURA_LOKALNE_SAMOUPRAVE" ],
+	"columns" : [ "DR_OZNAKA", "OP_OZNAKA", "OP_NAZIV", "NM_IDENTIFIKATOR" ]
+},
+{
+	"name": "OP_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka opštine",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OP_NAZIV",
+	"type": "4",
+	"displayName": "Naziv opštine",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REGION",
+	"type": "3",
+	"displayName": "Region",
+	"children": [ "STRUKTURA_REGIONA" ],
+	"columns" : [ "TR_OZNAKA", "REG_OZNAKA", "REG_NAZIV", "DR_OZNAKA", "NAS_DR_OZNAKA", "NM_IDENTIFIKATOR" ]
+},
+{
+	"name": "TR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka tipa regiona",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REG_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka regiona",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REG_NAZIV",
+	"type": "4",
+	"displayName": "Naziv regiona",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NAS_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Država sedišta regiona",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "SASTAV_DRZAVE",
+	"type": "3",
+	"displayName": "Sastav države",
+	"children": [],
+	"columns" : [ "DR_OZNAKA", "DRZ_DR_OZNAKA", "SAS_OD", "SAS_DO" ]
+},
+{
+	"name": "SAS_OD",
+	"type": "4",
+	"displayName": "Datum formiranja sastava države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "SAS_DO",
+	"type": "4",
+	"displayName": "Datum deformacije sastava države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "STRUKTURA_LOKALNE_SAMOUPRAVE",
+	"type": "3",
+	"displayName": "Struktura lokalne samouprave",
+	"children": [],
+	"columns" : [ "DR_OZNAKA", "NM_IDENTIFIKATOR", "OP_OZNAKA" ]
+},
+{
+	"name": "STRUKTURA_REGIONA",
+	"type": "3",
+	"displayName": "Struktura regiona ",
+	"children": [],
+	"columns" : [ "TR_OZNAKA", "REG_OZNAKA", "REG_TR_OZNAKA", "REG_REG_OZNAKA"]
+},
+{
+	"name": "REG_TR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka tipa regiona",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REG_REG_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka regiona",
+	"children": [],
+	"columns" : []
+},			
+{
+	"name": "TIP_REGIONA",
+	"type": "3",
+	"displayName": "Tip regiona",
+	"children": [ "REGION" ],
+	"columns" : [ "TR_OZNAKA", "TR_NAZIV" ]
+},
+{
+	"name": "TR_NAZIV",
+	"type": "4",
+	"displayName": "Naziv tipa regiona",
+	"children": [],
+	"columns" : []
+},
+{
+	"name" : "organisationOfBussinesSystems",
+	"type" : "2",
+	"displayName": "Unutrašnja organizacija",
+	"children" : [ "innerOrganisation", "materialResourcesWorkspace", "humaResources" ],
+	"columns" : []
+},
+{
+	"name" : "innerOrganisation",
+	"type" : "2",
+	"displayName": "Organizaciona struktura",
+	"children" : [ "AKT_O_ORGANIZACIJI", "DODELJENE_DELATNOSTI", "GRANA", "GRUPA_DELATNOSTI", "GRUPA_POSLOVA", "OBLAST", "ORGANIZACIONA_SEMA", "ORGANIZACIONA_STRUKTURA", "ORGANIZACIONE_JEDINICE", "POSLOVNI_SISTEM", "REGISTROVAN_ZA", "SEKTOR", "TIP" ],
+	"columns" : []
+},
+{
+	"name": "AKT_O_ORGANIZACIJI",
+	"type": "3",
+	"displayName": "Akt o organizaciji",
+	"children": [ "ORGANIZACIONA_SEMA" ],
+	"columns" : [ "DR_OZNAKA", "GD_OZNAKA", "PS_OZNAKA", "AO_REDNI_BROJ2", "AO_DATUM_USVAJANJA", "AO_VAZI_DO"]
+},
+{
+	"name": "PS_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "AO_REDNI_BROJ2",
+	"type": "4",
+	"displayName": "Rb akta o organizaciji",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "AO_DATUM_USVAJANJA",
+	"type": "4",
+	"displayName": "Datum usvajanja AO",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "AO_VAZI_DO",
+	"type": "4",
+	"displayName": "Datum prestanka važenja AO",
+	"children": [],
+	"columns" : []
+},	
+{
+	"name": "DODELJENE_DELATNOSTI",
+	"type": "3",
+	"displayName": "Dodeljene delatnosti",
+	"children": [],
+	"columns" : [ "ORG_DR_OZNAKA", "GD_OZNAKA", "PS_OZNAKA", "OJ_OZNAKA", "OBL_OBLAST", "GRA_GRANA", "GRU_GRUPA" ]
+},
+{
+	"name": "ORG_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe delatnosti",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka organizacione jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBL_OBLAST",
+	"type": "4",
+	"displayName": "Identifikator oblasti",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "GRA_GRANA",
+	"type": "4",
+	"displayName": "Identifikator grane",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "GRU_GRUPA",
+	"type": "4",
+	"displayName": "Identifikator grupe",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "GRANA",
+	"type": "3",
+	"displayName": "Grana",
+	"children": [ "GRUPA_POSLOVA" ],
+	"columns" : [ "DR_OZNAKA", "OBL_OBLAST", "GRA_GRANA", "GRA_NAZIV" ]
+},
+{
+	"name": "GRA_NAZIV",
+	"type": "4",
+	"displayName": "Naziv grane",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "GRUPA_DELATNOSTI",
+	"type": "3",
+	"displayName": "Grupa delatnosti",
+	"children": [ "POSLOVNI_SISTEM" ],
+	"columns" : [ "GD_OZNAKA", "GD_NAZIV" ]
+},
+{
+	"name": "GD_NAZIV",
+	"type": "4",
+	"displayName": "Naziv grupe delatnosti",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "GRUPA_POSLOVA",
+	"type": "3",
+	"displayName": "Grupa poslova",
+	"children": [ "DODELJENE_DELATNOSTI", "REGISTROVAN_ZA" ],
+	"columns" : [ "DR_OZNAKA", "OBL_OBLAST", "GRA_GRANA", "GRU_GRUPA", "GRU_NAZIV"]
+},
+{
+	"name": "GRU_NAZIV",
+	"type": "4",
+	"displayName": "Naziv grupe",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBLAST",
+	"type": "3",
+	"displayName": "Oblast",
+	"children": [ "GRANA" ],
+	"columns" : [ "DR_OZNAKA", "OBL_OBLAST", "SE_SEKTOR", "OBL_NAZIV" ]
+},
+{
+	"name": "SE_SEKTOR",
+	"type": "4",
+	"displayName": "Identifikator sektora",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBL_NAZIV",
+	"type": "4",
+	"displayName": "Naziv oblasti",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ORGANIZACIONA_SEMA",
+	"type": "3",
+	"displayName": "Organizaciona šema",
+	"children": [],
+	"columns" : [ "AKT_DR_OZNAKA", "AKT_GD_OZNAKA", "PS_OZNAKA", "AO_REDNI_BROJ2", "OJ_OZNAKA" ]
+},
+{
+	"name": "AKT_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "AKT_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe delatnosti",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ORG_PS_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ORGANIZACIONA_STRUKTURA",
+	"type": "3",
+	"displayName": "Organizaciona struktura",
+	"children": [],
+	"columns" : [ "DR_OZNAKA", "GD_OZNAKA", "PS_OZNAKA", "OJ_OZNAKA", "ORG_OJ_OZNAKA" ]
+},
+{
+	"name": "ORG_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe delatnosti",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ORG_OJ_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka organizacione jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ORGANIZACIONE_JEDINICE",
+	"type": "3",
+	"displayName": "Organizaciona jedinica",
+	"children": [ "KORISTI_OBJEKTE", "KORISTI_PROSTORIJE", "RASPORED_NA_RADNA_MESTA", "ORGANIZACIONA_SEMA", "ORGANIZACIONA_STRUKTURA", "DODELJENE_DELATNOSTI", "ROBA", "PRIJEMNICA", "NALOG_ZA_LANSIRANJE_PROIZVODA" ],
+	"columns" : [ "DR_OZNAKA", "GD_OZNAKA", "PS_OZNAKA", "OJ_OZNAKA", "TIP_OZNAKA", "OJ_NAZIV", "OJ_DATOSN", "OJ_DATUK", "NM_IDENTIFIKATOR", "OJ_ADRESA", "OJ_WEB", "OJ_TEL", "OJ_FAX", "OJ_E_MAIL" ]
+},
+{
+	"name": "TIP_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "TIP_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe delatnosti",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "TIP_PS_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "TIP_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka tipa",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_NAZIV",
+	"type": "4",
+	"displayName": "Naziv organizacione jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_DATOSN",
+	"type": "4",
+	"displayName": "Datum osnivanja organizacine jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_DATUK",
+	"type": "4",
+	"displayName": "Datum ukidanja organizacine jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_ADRESA",
+	"type": "4",
+	"displayName": "Adresa organizacine jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_WEB",
+	"type": "4",
+	"displayName": "Web sajt organizacine jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_TEL",
+	"type": "4",
+	"displayName": "Telefon organizacine jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_FAX",
+	"type": "4",
+	"displayName": "Fax organizacine jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OJ_E_MAIL",
+	"type": "4",
+	"displayName": "Email organizacine jedinice",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "POSLOVNI_SISTEM",
+	"type": "3",
+	"displayName": "Poslovni sistem",
+	"children" : [ "NAMENA_OBJEKTA_I_PROSTORA", "OBJEKTI_I_ZGRADE", "REGISTAR_ZAPOSLENIH", "SISTEMATIZACIJA_RADNIH_MESTA", "AKT_O_ORGANIZACIJI", "TIP", "ORGANIZACIONE_JEDINICE", "REGISTROVAN_ZA", "RADNA_GODINA", "PROIZVOD" ],
+	"columns" : [ "DR_OZNAKA", "GD_OZNAKA", "PS_OZNAKA", "PS_NAZIV", "PS_MBR", "PS_PIB", "NM_IDENTIFIKATOR", "PS_ADRESA", "PS_WEB", "PS_TEL", "PS_FAX", "PS_E_MAIL" ]
+},
+{
+	"name": "PS_NAZIV",
+	"type": "4",
+	"displayName": "Naziv poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PS_MBR",
+	"type": "4",
+	"displayName": "MBR poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PS_PIB",
+	"type": "4",
+	"displayName": "PIB poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PS_ADRESA",
+	"type": "4",
+	"displayName": "Adresa poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PS_WEB",
+	"type": "4",
+	"displayName": "Web poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PS_TEL",
+	"type": "4",
+	"displayName": "Telefon poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PS_FAX",
+	"type": "4",
+	"displayName": "Fax poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PS_E_MAIL",
+	"type": "4",
+	"displayName": "Email poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REGISTROVAN_ZA",
+	"type": "3",
+	"displayName": "Registrovan za",
+	"children": [],
+	"columns" : [ "POS_DR_OZNAKA", "GD_OZNAKA", "PS_OZNAKA", "OBL_OBLAST", "GRA_GRANA", "GRU_GRUPA" ]
+},
+{
+	"name": "POS_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "SEKTOR",
+	"type": "3",
+	"displayName": "Sektor",
+	"children": [ "OBLAST"],
+	"columns" : [ "DR_OZNAKA", "SE_SEKTOR", "SE_NAZIV" ]
+},
+{
+	"name": "SE_NAZIV",
+	"type": "4",
+	"displayName": "Naziv sektora",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "TIP",
+	"type": "3",
+	"displayName": "Tip",
+	"children": [ "ORGANIZACIONE_JEDINICE" ],
+	"columns" : [ "DR_OZNAKA", "GD_OZNAKA", "PS_OZNAKA", "TIP_OZNAKA", "TIP_NAZIV" ]
+},
+{
+	"name": "TIP_NAZIV",
+	"type": "4",
+	"displayName": "Naziv tipa",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "materialResourcesWorkspace",
+	"type": "2",
+	"displayName": "Materijalni resursi i prostor",
+	"children": [ "KORISTI_OBJEKTE", "KORISTI_PROSTORIJE", "NAMENA_OBJEKTA_I_PROSTORA", "OBJEKTI_I_ZGRADE", "PROSTORIJE", "SEDE_U_PROSTORIJI" ],
+	"columns" : []
+},
+{
+	"name": "KORISTI_OBJEKTE",
+	"type": "3",
+	"displayName": "Koristi objekte",
+	"children": [],
+	"columns" : [ "POS_DR_OZNAKA", "POS_GD_OZNAKA", "POS_PS_OZNAKA", "OBJ_OZNAKA", "OJ_OZNAKA" ]
+},
+{
+	"name": "OBJ_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBJ_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe poslova",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBJ_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka objekta",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "KORISTI_PROSTORIJE",
+	"type": "3",
+	"displayName": "Koristi prostorije",
+	"children": [],
+	"columns" : [ "PRO_POS_DR_OZNAKA", "PRO_POS_GD_OZNAKA", "PRO_POS_PS_OZNAKA", "PRO_OBJ_OZNAKA", "PRO_PRO_SPRAT", "PRO_PRO_PROSTORIJA", "ORG_OJ_OZNAKA" ]
+},
+{
+	"name": "PRO_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe poslova",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBJ_PS_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_SPRAT",
+	"type": "4",
+	"displayName": "Sprat prostorije",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_PROSTORIJA",
+	"type": "4",
+	"displayName": "Identifikator prostorije",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NAMENA_OBJEKTA_I_PROSTORA",
+	"type": "3",
+	"displayName": "Namena objekta i prostora",
+	"children": [ "PROSTORIJE", "OBJEKTI_I_ZGRADE" ],
+	"columns" : [ "POS_DR_OZNAKA", "POS_GD_OZNAKA", "POS_PS_OZNAKA", "NAM_OZNAKA", "NAM_OPIS" ]
+},
+{
+	"name": "POS_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "POS_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe poslova",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "POS_PS_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NAM_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka namene",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NAM_OPIS",
+	"type": "4",
+	"displayName": "Opis namene",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBJEKTI_I_ZGRADE",
+	"type": "3",
+	"displayName": "Objekti i zgrade",
+	"children": [ "PROSTORIJE" ],
+	"columns" : [ "POS_DR_OZNAKA", "POS_GD_OZNAKA", "POS_PS_OZNAKA", "OBJ_OZNAKA", "OBJ_NAZIV", "NAM_OZNAKA", "NM_IDENTIFIKATOR", "OBJ_ADRESA" ]
+},
+{
+	"name": "NAM_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NAM_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe poslova",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "NAM_PS_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBJ_NAZIV",
+	"type": "4",
+	"displayName": "Naziv objekta",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "OBJ_ADRESA",
+	"type": "4",
+	"displayName": "Adresa objekta",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PROSTORIJE",
+	"type": "3",
+	"displayName": "Prostorije",
+	"children": [ "SEDE_U_PROSTORIJI", "KORISTI_PROSTORIJE" ],
+	"columns" : [ "POS_DR_OZNAKA", "POS_GD_OZNAKA", "POS_PS_OZNAKA", "OBJ_OZNAKA", "PRO_SPRAT", "PRO_PROSTORIJA", "PRO_NAZIV", "NAM_OZNAKA", "PRO_POVRSINA", "PRO_LOKAL" ]
+},
+{
+	"name": "SKL_SIFRA",
+	"type": "4",
+	"displayName": "Šifra SKL",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_NAZIV",
+	"type": "4",
+	"displayName": "Naziv prostorije",
+	"children": [],
+	"columns" : []
+},
+
+{
+	"name": "PRO_POVRSINA",
+	"type": "4",
+	"displayName": "Površina prostorije",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_LOKAL",
+	"type": "4",
+	"displayName": "Identifikator lokala",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "SEDE_U_PROSTORIJI",
+	"type": "3",
+	"displayName": "Sede u prostoriji",
+	"children": [],
+	"columns" : [ "PRO_POS_DR_OZNAKA", "PRO_POS_GD_OZNAKA", "PRO_POS_PS_OZNAKA", "PRO_OBJ_OZNAKA", "PRO_PRO_SPRAT", "PRO_PRO_PROSTORIJA", "REG_ZAP_REDNI_BROJ" ]
+},
+{
+	"name": "PRO_POS_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe poslova",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_POS_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka države",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_POS_PS_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_OBJ_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka objekta",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_PRO_SPRAT",
+	"type": "4",
+	"displayName": "Sprat",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "PRO_PRO_PROSTORIJA",
+	"type": "4",
+	"displayName": "Prostorija",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REG_ZAP_REDNI_BROJ",
+	"type": "4",
+	"displayName": "Redni broj",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REG_DR_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka drzave",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REG_GD_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka grupe poslova",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ZAP_REDNI_BROJ",
+	"type": "4",
+	"displayName": "Redni broj",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "humaResources",
+	"type": "2",
+	"displayName": "Ljudski resursi",
+	"children": [ "RASPORED_NA_RADNA_MESTA", "REGISTAR_ZAPOSLENIH", "SISTEMATIZACIJA_RADNIH_MESTA" ],
+	"columns" : []
+},
+{
+	"name": "RASPORED_NA_RADNA_MESTA",
+	"type": "3",
+	"displayName": "Raspored na radna mesta",
+	"children": [],
+	"columns" : [ "REG_DR_OZNAKA2", "REG_GD_OZNAKA2", "REG_PS_OZNAKA", "REG_ZAP_REDNI_BROJ", "RASP_RBR", "RM_OZNAKA", "OJ_OZNAKA", "RASP_OD", "RASP_DO" ]
+},
+{
+	"name": "REG_GD_OZNAKA2",
+	"type": "4",
+	"displayName": "Oznaka grupe poslova",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REG_DR_OZNAKA2",
+	"type": "4",
+	"displayName": "Oznaka drzave",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REG_PS_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka poslovnog sistema",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "RASP_RBR",
+	"type": "4",
+	"displayName": "Redni broj",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "RM_OZNAKA",
+	"type": "4",
+	"displayName": "Oznaka rasporeda na radno mesto",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "RASP_OD",
+	"type": "4",
+	"displayName": "Rasporedjen od",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "RASP_DO",
+	"type": "4",
+	"displayName": "Rasporedjen do",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "REGISTAR_ZAPOSLENIH",
+	"type": "3",
+	"displayName": "Registar zaposlenih",
+	"children": [ "SEDE_U_PROSTORIJI", "RASPORED_NA_RADNA_MESTA", "PRIJEMNICA", "NARUDZBENICA", "NALOG_ZA_LANSIRANJE_PROIZVODA" ],
+	"columns" : [ "DR_OZNAKA", "GD_OZNAKA", "PS_OZNAKA", "ZAP_REDNI_BROJ", "ZAP_PREZIME", "ZAP_IME", "ZAP_IMEROD", "ZAP_JMBG" ]
+},
+{
+	"name": "ZAP_PREZIME",
+	"type": "4",
+	"displayName": "Prezime zaposlenog",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ZAP_IME",
+	"type": "4",
+	"displayName": "Ime zaposlenog",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ZAP_IMEROD",
+	"type": "4",
+	"displayName": "Ime roditelja zaposlenog",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "ZAP_JMBG",
+	"type": "4",
+	"displayName": "JMBG zaposlenog",
+	"children": [],
+	"columns" : []
+},
+{
+	"name": "SISTEMATIZACIJA_RADNIH_MESTA",
+	"type": "3",
+	"displayName": "Sistematizacija radnih mesta",
+	"children": [ "RASPORED_NA_RADNA_MESTA" ],
+	"columns" : [ "POS_DR_OZNAKA", "POS_GD_OZNAKA", "POS_PS_OZNAKA", "RM_OZNAKA", "RM_NAZIV" ]
+},
+{
+	"name": "RM_NAZIV",
+	"type": "4",
+	"displayName": "Naziv radnog mesta",
+	"children": [],
+	"columns" : []
+},
+{
+	"name" : "teamPackage",
+	"type" : "2",
+	"displayName": "Timski paket",
+	"children" : [ "UpravljanjeProizvodnjom", "TIM6.4" ],
+	"columns" : []
+},
+{
+	"name" : "TIM6.4",
+	"type" : "2",
+	"displayName": "Nabavka",
+	"children" : [ "DOBAVLJAC", "NARUDZBENICA", "PRIJEMNICA", "TIP_ROBE", "ROBA", "TRAZI_NARUDZBINU" ],
+	"columns" : []
+},
+{
+	"name" : "DOBAVLJAC",
+	"type" : "3",
+	"displayName": "Dobavljac",
+	"children" : [ "NARUDZBENICA", "PRIJEMNICA" ],
+	"columns" : []
+},
+{
+	"name" : "NARUDZBENICA",
+	"type" : "3",
+	"displayName": "Narudzbenica",
+	"children" : [ "TRAZI_NARUDZBINU" ],
+	"columns" : []
+},
+{
+	"name" : "TRAZI_NARUDZBINU",
+	"type" : "3",
+	"displayName": "Trazi narudzbinu",
+	"children" : [],
+	"columns" : []
+},
+{
+	"name" : "TIP_ROBE",
+	"type" : "3",
+	"displayName": "Tip robe",
+	"children" : [ "ROBA" ],
+	"columns" : []
+},
+{
+	"name" : "ROBA",
+	"type" : "3",
+	"displayName": "Roba",
+	"children" : [ "TRAZI_NARUDZBINU" ],
+	"columns" : []
+},
+{
+	"name" : "PRIJEMNICA",
+	"type" : "3",
+	"displayName": "Prijemnica",
+	"children" : [],
+	"columns" : []
+},
+{
+	"name" : "UpravljanjeProizvodnjom",
+	"type" : "2",
+	"displayName": "Upravljanje proizvodnjom",
+	"children" : [ "NALOG_ZA_LANSIRANJE_PROIZVODA", "RADNA_GODINA", "STA_TREBA_PROIZVESTI", "MERNA_JEDINICA", "PROIZVOD", "STRUKTURA_PROIZVODA" ],
+	"columns" : []
+},
+{
+	"name" : "NALOG_ZA_LANSIRANJE_PROIZVODA",
+	"type" : "3",
+	"displayName": "Nalog za lansiranje proizvoda",
+	"children" : [ "STA_TREBA_PROIZVESTI", "NALOG_ZA_LANSIRANJE_PROIZVODA" ],
+	"columns" : []
+},
+{
+	"name" : "RADNA_GODINA",
+	"type" : "3",
+	"displayName": "Radna godina",
+	"children" : [ "NALOG_ZA_LANSIRANJE_PROIZVODA" ],
+	"columns" : []
+},
+{
+	"name" : "STA_TREBA_PROIZVESTI",
+	"type" : "3",
+	"displayName": "Sta treba proizvesti",
+	"children" : [],
+	"columns" : []
+},
+{
+	"name" : "MERNA_JEDINICA",
+	"type" : "3",
+	"displayName": "Merna jedinica",
+	"children" : [ "STA_TREBA_PROIZVESTI", "STRUKTURA_PROIZVODA", "ROBA" ],
+	"columns" : []
+},
+{
+	"name" : "PROIZVOD",
+	"type" : "3",
+	"displayName": "Proizvod",
+	"children" : [ "STA_TREBA_PROIZVESTI", "STRUKTURA_PROIZVODA" ],
+	"columns" : []
+},
+{
+	"name" : "STRUKTURA_PROIZVODA",
+	"type" : "3",
+	"displayName": "Struktura proizvoda",
+	"children" : [],
+	"columns" : []
+}
+]
+}

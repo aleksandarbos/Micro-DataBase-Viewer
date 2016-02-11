@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DataBaseTest" project="MicroDBase" tests="12" started="12" failures="1" errors="5" ignored="0" class="DataBase" revision="175">
+  <testsuite name="test.controller.database.DataBaseTest" time="7.955">
+    <testcase name="testParseDecimalFromDB" classname="test.controller.database.DataBaseTest" method="public String parseDecimalFromDB(String decimalString);" time="0.2"/>
+    <testcase name="testParseDateToDB" classname="test.controller.database.DataBaseTest" method="public String parseDateToDB(Date date);" time="0.044">
+		<failure>
+			Postojala je greska u test metodi koja je ispravljena u reviziji 177.
+			DataBase.getInstance().parseDateToDB(null);
+			Ocekivani rezultat je bio "", ali metoda nije izvrsena. Razlog je taj sto metoda nije umela da rukuje sa null parametrom, koji je bio prosledjen.
+			Problem je resen tako sto je na pocetku metode dodata provera da li je prosledjeni parametar null.
+			Ispravljeno u reviziji 177.
+		</failure>
+    </testcase>
+    <testcase name="testLogIn" classname="test.controller.database.DataBaseTest" method="public boolean logIn (String username, String password);" time="0.077" status="Success"/>
+    <testcase name="testParseDateFromDB" classname="test.controller.database.DataBaseTest" method="public String parseDateFromDB(String dateString);" time="0.002" status="Failure">
+		<failure>
+			DataBase.getInstance().parseDateFromDB(null);
+			Ocekivani rezultat je bio "", ali metoda nije izvrsena. Razlog je taj sto metoda nije umela da rukuje sa null parametrom, koji je bio prosledjen.
+			Problem je resen tako sto je na pocetku metode dodata provera da li je prosledjeni parametar null.
+			Ispravljeno u reviziji 177.
+		</failure>
+    </testcase>
+    <testcase name="testUpdateInDatabase" classname="test.controller.database.DataBaseTest" method="public boolean updateInDatabase(String tableId, Vector&lt;String&gt; headers, Vector&lt;Object&gt; data);" time="3.005" status="Failure">
+		<failure>
+			DataBase.getInstance().updateInDatabase("TIP_REGIONA", headers5, null);
+			Ocekivani rezultat je bio "false", ali metoda nije izvrsena. Razlog je taj sto je kao treci parametar prosledjeno null, koje metoda nije 
+			bila u sposobnosti da obradi.
+			Problem je resen tako sto je na pocetku metode dodata provera da li je medju prosledjenim parametrima postoji null.
+			Ispravljeno u reviziji 177.
+		</failure>
+    </testcase>
+    <testcase name="testGetColumnType" classname="test.controller.database.DataBaseTest" method="public ColumnType getColumnType(String tableId, String column);" time="0.14" status="Success"/>
+    <testcase name="testParseDateTimeFromDB" classname="test.controller.database.DataBaseTest" method="parseDateTimeFromDB" time="0.003" status="Failure">
+		<failure>
+			DataBase.getInstance().parseDateTimeFromDB(null);
+			Ocekivani rezultat je bio "", ali metoda nije izvrsena. Razlog je taj sto metoda nije umela da rukuje sa null parametrom, koji je bio prosledjen.
+			Problem je resen tako sto je na pocetku metode dodata provera da li je prosledjeni parametar null.
+			Ispravljeno u reviziji 177.
+		</failure>
+    </testcase>
+    <testcase name="testDeleteFromDatabase" classname="test.controller.database.DataBaseTest" method="public boolean deleteFromDatabase(String tableId, Vector&lt;String&gt; headers, Vector&lt;String&gt; data);" time="2.608" status="Failure">
+		<failure>
+			DataBase.getInstance().deleteFromDatabase("DRZAVNO_UREDJENJE", headers2, data2);
+			Ocekivani rezultat je bio "false", ali metoda je uspesno izvrsena. Razlog je taj sto je metoda radila bez obzira na prosledjeni broj parametara.
+			Problem je resen tako sto je na pocetku metode dodata provera da li broj prosledjenih elemenata u okviru parametara odgovara ocekivanom.
+			Ispravljeno u reviziji 177.
+			
+			DataBase.getInstance().deleteFromDatabase("TIP_REGIONA", headers5, null);
+			Ocekivani rezultat je bio "false", ali metoda nije izvrsena. Razlog je taj sto je kao treci parametar prosledjeno null, koje metoda nije 
+			bila u sposobnosti da obradi.
+			Problem je resen tako sto je na pocetku metode dodata provera da li je medju prosledjenim parametrima postoji null.
+			Ispravljeno u reviziji 177.
+		</failure>
+    </testcase>
+    <testcase name="testInsertToDatabase" classname="test.controller.database.DataBaseTest" method="public boolean insertToDatabase(String tableId, Vector&lt;String&gt; headers, Vector&lt;Object&gt; data);" time="1.596" status="Failure">
+		<failure>
+			DataBase.getInstance().insertToDatabase("TIP_REGIONA", headers5, null);
+			Ocekivani rezultat je bio "false", ali metoda nije izvrsena. Razlog je taj sto je kao treci parametar prosledjeno null, koje metoda nije 
+			bila u sposobnosti da obradi.
+			Problem je resen tako sto je na pocetku metode dodata provera da li je medju prosledjenim parametrima postoji null.
+			Ispravljeno u reviziji 177.
+		</failure>
+    </testcase>
+    <testcase name="testGetForeignKeys" classname="test.controller.database.DataBaseTest" method="public Vector&lt;Vector&gt; getForeignKeys(String tableId, String tableParentId);" time="0.066" status="Success"/>
+    <testcase name="testGetPrimaryKeys" classname="test.controller.database.DataBaseTest" method="public Vector&lt;String&gt; getPrimaryKeys(String tableId);" time="0.084" status="Success"/>
+    <testcase name="testIsPrimaryKey" classname="test.controller.database.DataBaseTest" method="public boolean isPrimaryKey(String tableId, String column);" time="0.127" status="Success"/>
+  </testsuite>
+</testrun>

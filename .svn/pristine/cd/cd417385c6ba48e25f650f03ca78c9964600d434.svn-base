@@ -1,0 +1,24 @@
+{ "list" : [
+{
+	"name" : "ime1",
+	"type" : "0",
+	"displayName": "Ime1",
+	"children" : [],
+	"columns" : []
+},
+{
+	"name" : "ime2",
+	"type" : "1",
+	"displayName": "Ime2",
+	"children" : [ "ime3" ],
+	"columns" : []
+},
+{
+	"name" : "ime3",
+	"type" : "1",
+	"displayName": "Ime3",
+	"children" : [],
+	"columns" : []
+}
+]
+}

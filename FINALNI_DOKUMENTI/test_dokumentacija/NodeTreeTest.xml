@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="NodeTreeTest" project="MicroDBase" tests="9" started="9" failures="0" errors="3" ignored="0" class="NodeTree" revision="172">
+  <testsuite name="test.model.tree.node.NodeTreeTest" time="0.001">
+    <testsuite name="[0]" time="0.0">
+      <testcase name="testGetChildCount[0]" classname="test.model.tree.node.NodeTreeTest" method="public int getChildCount();" time="0.0" status="Success"/>
+      <testcase name="testCreateTree[0]" classname="test.model.tree.node.NodeTreeTest" method="public static NodeTree createTree(HashMap&lt;String, Node&gt; map);" time="0.0" status="Success"/>
+      <testcase name="testIsLeaf[0]" classname="test.model.tree.node.NodeTreeTest" method="public boolean isLeaf();" time="0.0" status="Success"/>
+    </testsuite>
+    <testsuite name="[1]" time="0.001">
+      <testcase name="testGetChildCount[1]" classname="test.model.tree.node.NodeTreeTest" method="public int getChildCount();" time="0.0" status="Success"/>
+      <testcase name="testCreateTree[1]" classname="test.model.tree.node.NodeTreeTest" method="public static NodeTree createTree(HashMap&lt;String, Node&gt; map);" time="0.001" status="Failure">
+			<failure>
+				NodeTree.createTree(map);
+				Ocekivani rezultat je bilo stablo sa parametrima, ali metoda je vratila vrednost null.
+				Problem je resen tako sto su postavljene provere: da li prosledjena mapa ima elemenata i da li prosledjeni korenski cvor ima dece.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+      <testcase name="testIsLeaf[1]" classname="test.model.tree.node.NodeTreeTest" method="public boolean isLeaf();" time="0.0" status="Success"/>
+    </testsuite>
+    <testsuite name="[2]" time="0.0">
+      <testcase name="testGetChildCount[2]" classname="test.model.tree.node.NodeTreeTest" method="public int getChildCount();" time="0.0" status="Success"/>
+      <testcase name="testCreateTree[2]" classname="test.model.tree.node.NodeTreeTest" method="public static NodeTree createTree(HashMap&lt;String, Node&gt; map);" time="0.0" status="Failure">
+			<failure>
+				NodeTree.createTree(map);
+				Ocekivani rezultat je bilo stablo sa parametrima, ali metoda je vratila vrednost null.
+				Problem je resen tako sto su postavljene provere: da li prosledjena mapa ima elemenata i da li prosledjeni korenski cvor ima dece.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+      <testcase name="testIsLeaf[2]" classname="test.model.tree.node.NodeTreeTest" method="public boolean isLeaf();" time="0.0" status="Failure">
+			<failure>
+				node.isLeaf();
+				Ocekivani rezultat je bio true, ali metoda nije izvrsena. Razlog je bio to sto metoda nije mogla da pristupi listi cija je vrednost null.
+				Problem je resen tako sto je postavljena provera da li prosledjena lista jednaka null.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>
+<testrun name="NodeTreeTest" project="MicroDBase" tests="9" started="9" failures="0" errors="3" ignored="0" class="NodeTree" revision="172">
+  <testsuite name="test.model.tree.node.NodeTreeTest" time="0.001">
+    <testsuite name="[0]" time="0.0">
+      <testcase name="testGetChildCount[0]" classname="test.model.tree.node.NodeTreeTest" method="public int getChildCount();" time="0.0" status="Success"/>
+      <testcase name="testCreateTree[0]" classname="test.model.tree.node.NodeTreeTest" method="public static NodeTree createTree(HashMap&lt;String, Node&gt; map);" time="0.0" status="Success"/>
+      <testcase name="testIsLeaf[0]" classname="test.model.tree.node.NodeTreeTest" method="public boolean isLeaf();" time="0.0" status="Success"/>
+    </testsuite>
+    <testsuite name="[1]" time="0.001">
+      <testcase name="testGetChildCount[1]" classname="test.model.tree.node.NodeTreeTest" method="public int getChildCount();" time="0.0" status="Success"/>
+      <testcase name="testCreateTree[1]" classname="test.model.tree.node.NodeTreeTest" method="public static NodeTree createTree(HashMap&lt;String, Node&gt; map);" time="0.001" status="Failure">
+			<failure>
+				NodeTree.createTree(map);
+				Ocekivani rezultat je bilo stablo sa parametrima, ali metoda je vratila vrednost null.
+				Problem je resen tako sto su postavljene provere: da li prosledjena mapa ima elemenata i da li prosledjeni korenski cvor ima dece.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+      <testcase name="testIsLeaf[1]" classname="test.model.tree.node.NodeTreeTest" method="public boolean isLeaf();" time="0.0" status="Success"/>
+    </testsuite>
+    <testsuite name="[2]" time="0.0">
+      <testcase name="testGetChildCount[2]" classname="test.model.tree.node.NodeTreeTest" method="public int getChildCount();" time="0.0" status="Success"/>
+      <testcase name="testCreateTree[2]" classname="test.model.tree.node.NodeTreeTest" method="public static NodeTree createTree(HashMap&lt;String, Node&gt; map);" time="0.0" status="Failure">
+			<failure>
+				NodeTree.createTree(map);
+				Ocekivani rezultat je bilo stablo sa parametrima, ali metoda je vratila vrednost null.
+				Problem je resen tako sto su postavljene provere: da li prosledjena mapa ima elemenata i da li prosledjeni korenski cvor ima dece.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+      <testcase name="testIsLeaf[2]" classname="test.model.tree.node.NodeTreeTest" method="public boolean isLeaf();" time="0.0" status="Failure">
+			<failure>
+				node.isLeaf();
+				Ocekivani rezultat je bio true, ali metoda nije izvrsena. Razlog je bio to sto metoda nije mogla da pristupi listi cija je vrednost null.
+				Problem je resen tako sto je postavljena provera da li prosledjena lista jednaka null.
+				Ispravljeno u reviziji 173.
+			</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,10 @@
+{ "list" : [
+{
+	"name" : "ime1",
+	"type" : "0",
+	"displayName": "Ime1",
+	"children" : [],
+	"columns" : []
+}
+]
+}
