@@ -7,7 +7,7 @@
   - JavaSE 1.7 (Swing) + JDBC (Working with Relation DataBase - MSServer) 
 
 ### Project screenshots:
-  - Application login: ![Alt text](/images/screenshots/login.png?raw=true "Application login")
+  - Application login: <br/> ![Alt text](/images/screenshots/login.png?raw=true "Application login")
   - Main frame: ![Alt text](/images/screenshots/mainframe.png?raw=true "Main frame")
   - Tables: ![Alt text](/images/screenshots/tables.png?raw=true "Tables")
   - Generic GUI, records manipulation: 
